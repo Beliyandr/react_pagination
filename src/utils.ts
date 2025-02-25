@@ -7,3 +7,11 @@ export function getNumbers(from: number, to: number): number[] {
 
   return numbers;
 }
+
+// export function createArrayNumbers(number: number) {
+//   const result = [];
+//   for (let i = 1; i <= number; i++) {
+//     result.push(i);
+//   }
+//   return result;
+// }
