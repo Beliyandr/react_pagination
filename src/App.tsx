@@ -10,7 +10,7 @@ export const App: React.FC = () => {
   const [total, setTotal] = useState(1);
   const [perPage, setPerPage] = useState(3);
   const [currentPage, setCurrentPage] = useState(1);
-  const [page, setPage] = useState<string[]>([]);
+  const [pages, setPage] = useState<string[]>([]);
 
   useEffect(() => {
     setTotal(items.length);
@@ -20,8 +20,8 @@ export const App: React.FC = () => {
 
   const filteredPage =
     currentPage === 1
-      ? page.slice(0, perPage)
-      : page.slice(perPage * currentPage - perPage, perPage * currentPage);
+      ? pages.slice(0, perPage)
+      : pages.slice(perPage * currentPage - perPage, perPage * currentPage);
 
   const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setPerPage(+event.target.value);
