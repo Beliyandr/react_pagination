@@ -1,6 +1,5 @@
 import React from 'react';
 import { getNumbers } from '../../utils';
-// import { createArrayNumbers } from '../../utils';
 
 type Props = {
   total: number;
@@ -28,7 +27,7 @@ export const Pagination: React.FC<Props> = ({
           data-cy="prevLink"
           className="page-link"
           href="#prev"
-          aria-disabled="true"
+          aria-disabled={!!leftArrowDisabled}
           onClick={() => onPageChange(currentPage - 1)}
         >
           «
@@ -55,7 +54,7 @@ export const Pagination: React.FC<Props> = ({
           data-cy="nextLink"
           className="page-link"
           href="#next"
-          aria-disabled="false"
+          aria-disabled={!!rigthArrowDisabled}
           onClick={() => onPageChange(currentPage + 1)}
         >
           »
