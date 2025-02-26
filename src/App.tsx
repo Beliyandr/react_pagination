@@ -21,7 +21,7 @@ export const App: React.FC = () => {
   const filteredPage =
     currentPage === 1
       ? page.slice(0, perPage)
-      : page.slice(perPage, perPage * currentPage);
+      : page.slice(perPage * currentPage - perPage, perPage * currentPage);
 
   const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setPerPage(+event.target.value);
